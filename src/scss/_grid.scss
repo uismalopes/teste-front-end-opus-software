@@ -1,0 +1,68 @@
+$columns: 12;
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    margin: {
+        right: -15px;
+        left: -15px;
+    }
+}
+[class*="column-"]{
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.v-center{
+    align-items: center;
+}
+.h-center{
+    justify-content: center;
+}
+
+@for $i from 1 through $columns {
+    .column-#{$i}{
+        -ms-flex:0 0 100% * $i / $columns;
+        flex: 0 0 100% * $i / $columns;
+        max-width: 100% * $i / $columns;
+    }
+}
+
+@include media('phone'){
+    @for $i from 1 through $columns {
+        .column-sm-#{$i}{
+            -ms-flex:0 0 100% * $i / $columns;
+            flex: 0 0 100% * $i / $columns;
+            max-width: 100% * $i / $columns;
+        }
+    }
+}
+@include media('tablet'){
+    @for $i from 1 through $columns {
+        .column-md-#{$i}{
+            -ms-flex:0 0 100% * $i / $columns;
+            flex: 0 0 100% * $i / $columns;
+            max-width: 100% * $i / $columns;
+        }
+    }
+}
+@include media('desktop'){
+    @for $i from 1 through $columns {
+        .column-lg-#{$i}{
+            -ms-flex:0 0 100% * $i / $columns;
+            flex: 0 0 100% * $i / $columns;
+            max-width: 100% * $i / $columns;
+        }
+    }
+}
+@include media('monitor'){
+    @for $i from 1 through $columns {
+        .column-xl-#{$i}{
+            -ms-flex:0 0 100% * $i / $columns;
+            flex: 0 0 100% * $i / $columns;
+            max-width: 100% * $i / $columns;
+        }
+    }
+}
